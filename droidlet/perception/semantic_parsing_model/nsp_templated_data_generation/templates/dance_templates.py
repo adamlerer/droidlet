@@ -19,9 +19,6 @@ Examples:
 - dance until I tell you to stop
 '''
 
-
-from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
-
 DANCE_WITH_CORRECTION = [
     [[Human, Dance],
      [HumanReplace, Dance, AroundString]],

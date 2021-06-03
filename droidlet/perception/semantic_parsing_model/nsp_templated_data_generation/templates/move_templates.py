@@ -26,9 +26,6 @@ Examples:
 - move fifty two steps to the left of the orange structure
 '''
 
-
-from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
-
 MOVE_WITH_CORRECTION = [
     # TODO: add between for BlockObjectThese and BlockObjectThose these as well
     ## Go there, to the rel_dir of the mob ##

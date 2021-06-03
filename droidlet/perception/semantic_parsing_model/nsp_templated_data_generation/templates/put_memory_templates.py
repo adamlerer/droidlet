@@ -17,7 +17,6 @@ Examples:
 - human: good job
   bot: thanks for letting me know
 """
-from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
 
 TAG_WITH_CORRECTION = [
     ## Add location ##

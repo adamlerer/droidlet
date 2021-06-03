@@ -4,7 +4,7 @@
 
 Training code for semantic parsing models is in
 ```
-nsp_transformer_model/train_model.py
+train_model.py
 ```
 
 Depending on your GPU driver version, you may need to downgrade your pytorch and CUDA versions. As of this writing, FAIR machines have installed NVIDIA driver version 10010, which is compatible with pytorch 1.5.1 and cudatoolkit 10.1. To update your conda env with these versions, run
@@ -19,7 +19,7 @@ https://pytorch.org/get-started/previous-versions/
 
 First, we need to pre-generate some templated data to train the model on. 500K examples should be a good start:
 ```
-$ cd nsp_templated_data_generation
+$ cd ../nsp_templated_data_generation
 $ python generate_dialogue.py -n 500000 > generated_dialogues.txt
 ```
 
@@ -45,7 +45,7 @@ To create a split of annotated data too, simply run the above, but with filename
 We are now ready to train the model with:
 ```
 $ cd ~/droidlet
-$ python nsp_transformer_model/train_model.py \
+$ python train_model.py \
 --data_dir craftassist/agent/models/ttad_bert_updated/annotated_data/ \
 --dtype_samples '[["templated", 0.35], ["templated_modify", 0.05], ["annotated", 0.6]]' \
 --tree_voc_file craftassist/agent/models/ttad_bert_updated/models/caip_test_model_tree.json \

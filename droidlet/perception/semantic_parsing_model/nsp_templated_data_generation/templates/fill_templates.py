@@ -21,9 +21,6 @@ Examples:
 - cover up the tunnel at: 2, 3, 4
 '''
 
-
-from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
-
 FILL_WITH_CORRECTION = [
     ## Single word command ##
     [[Human, Fill],

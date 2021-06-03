@@ -19,10 +19,6 @@ Examples:
 - Stop building
 '''
 
-
-from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
-
-
 STOP_TEMPLATES = [
     [Human, StopSingle],
 

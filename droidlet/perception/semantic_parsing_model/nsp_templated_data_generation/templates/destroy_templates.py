@@ -21,9 +21,6 @@ Examples:
 - dig that tiny blue thing
 '''
 
-
-from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
-
 DESTROY_WITH_CORRECTION = [
     ## Destroy this / that X ##
     [[Human, Destroy, BlockObjectThat],

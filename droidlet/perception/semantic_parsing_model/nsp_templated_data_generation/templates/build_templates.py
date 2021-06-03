@@ -24,9 +24,6 @@ Examples:
 - near the spider assemble a dome using gravel.
 """
 
-
-from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
-
 BUILD_INBUILT_COMPOSITE = [
 [Human, Build, DescribingWord, AndBuild],
 ]

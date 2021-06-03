@@ -21,10 +21,6 @@ Examples:
     etc
 '''
 
-
-from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
-
-
 SPAWN_TEMPLATES = [
     ## Spawn mob ##
     [Human, Spawn, MobName],

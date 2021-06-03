@@ -25,10 +25,6 @@ Examples:
     etc
 '''
 
-
-from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
-
-
 FREEBUILD_WITH_CORRECTION = [
     [[Human, FreebuildLocation, ThereTemplateCoref],
      [HumanReplace, RelativeDirectionTemplate, LocationMobTemplate]],

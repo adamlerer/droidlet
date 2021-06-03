@@ -20,9 +20,6 @@ Examples:
 - make a tunnel a bit in front of the pig
 '''
 
-
-from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
-
 DIG_WITH_CORRECTION = [
     ## General pattern : dig + new location specification
     ## Dig X N times, add location ##

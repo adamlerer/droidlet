@@ -20,10 +20,6 @@ Examples:
 - continue the build action
 '''
 
-
-from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
-
-
 RESUME_TEMPLATES = [
     [Human, ResumeSingle],
 
