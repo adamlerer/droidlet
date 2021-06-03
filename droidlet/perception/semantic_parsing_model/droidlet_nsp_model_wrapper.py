@@ -36,7 +36,7 @@ class DroidletNSPModelWrapper(object):
         safety.txt, greetings.json, ground_truth/datasets folder
         """
         self.safety_words = get_safety_words()
-        self.bot_greetings = get_greetings(self.opts)
+        self.greetings = get_greetings(self.opts)
         self.ground_truth_actions = get_ground_truth(self.opts)
 
         # Socket event listener
@@ -92,7 +92,7 @@ class DroidletNSPModelWrapper(object):
             # return Say(, memory=self.dialogue_manager.memory)
 
         # 4. Check if incoming chat is one of the scripted ones in greetings
-        for greeting_type, allowed_str in self.botGreetings.items():
+        for greeting_type, allowed_str in self.greetings.items():
             if chat in allowed_str:
                 return random.choice(greeting_type)
                 # return BotGreet(greeting_type, memory=self.dialogue_manager.memory)
