@@ -5,15 +5,15 @@ import copy
 import logging
 import random
 import pkg_resources
-from droidlet.perception.semantic_parsing_model.utils import preprocess
+
 from time import time
 from typing import Dict
+from .utils import preprocess
 from .load_and_check_datasets import get_greetings, get_safety_words, get_ground_truth
-from droidlet.perception.semantic_parsing_model.nsp_model import DroidletSemanticParsingModel
+from .nsp_model import DroidletSemanticParsingModel
 from droidlet.event import sio
 from .utils.nsp_logger import NSPLogger
-# TODO: move JSONValidator into base_util
-from droidlet.dialog.craftassist.tests.validate_json import JSONValidator
+from .utils.validate_json import JSONValidator
 
 
 class DroidletNSPModelWrapper(object):

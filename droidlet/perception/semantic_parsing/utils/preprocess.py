@@ -1,13 +1,10 @@
 """
 Copyright (c) Facebook, Inc. and its affiliates.
 """
-import string
-
-from spacy.lang.en import English
-from typing import List
-
 """This file has functions to preprocess the chat from user before
 querying the dialogue manager"""
+from spacy.lang.en import English
+from typing import List
 
 tokenizer = English().Defaults.create_tokenizer()
 

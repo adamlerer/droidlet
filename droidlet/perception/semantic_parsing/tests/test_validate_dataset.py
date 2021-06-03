@@ -6,7 +6,7 @@ import os
 import unittest
 
 from agents.craftassist.tests.base_craftassist_test_case import BaseCraftassistTestCase
-from droidlet.dialog.craftassist.tests.validate_json import JSONValidator
+from droidlet.perception.semantic_parsing.utils.validate_json import JSONValidator
 
 FULL_DATA_DIR = os.path.join(os.path.dirname(__file__), "../../../../agents/craftassist/datasets/full_data/")
 SCHEMA_DIR = os.path.join(os.path.dirname(__file__), "../../../documents/json_schema/")

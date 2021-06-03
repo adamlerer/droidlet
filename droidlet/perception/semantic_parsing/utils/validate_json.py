@@ -1,8 +1,6 @@
 from jsonschema import validate, exceptions, RefResolver, Draft7Validator
 import json
-import ast
 from pprint import pprint
-import os
 import argparse
 import glob
 import re

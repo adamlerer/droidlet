@@ -36,13 +36,13 @@ from collections import OrderedDict
 
 from .action_node import *
 
-from droidlet.perception.semantic_parsing_model.nsp_templated_data_generation.template_objects import (
+from droidlet.perception.semantic_parsing.nsp_templated_data_generation.template_objects import (
     LOCATION_TEMPLATES,
     CONDIITON_TEMPLATES,
     REPEAT_KEY_TEMPLATES,
     BLOCKOBJECT_TEMPLATES,
 )
-from droidlet.perception.semantic_parsing_model.nsp_templated_data_generation.tree_components import (
+from droidlet.perception.semantic_parsing.nsp_templated_data_generation.tree_components import (
     Location,
     Schematic,
     BlockObject,
