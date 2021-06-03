@@ -21,7 +21,7 @@ Examples:
 '''
 
 
-from droidlet.dialog.ttad.generation_dialogues.template_objects import *
+from droidlet.perception.semantic_parsing_model.ttad.generation_dialogues.template_objects import *
 
 
 RESUME_TEMPLATES = [

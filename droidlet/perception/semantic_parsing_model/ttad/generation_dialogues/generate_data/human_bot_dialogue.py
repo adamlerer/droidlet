@@ -23,7 +23,7 @@ Action = {
 }
 """
 from .action_node import *
-from droidlet.dialog.ttad.generation_dialogues.tree_components import *
+from droidlet.perception.semantic_parsing_model.ttad.generation_dialogues.tree_components import *
 
 
 class GetMemory(ActionNode):

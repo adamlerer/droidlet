@@ -20,7 +20,7 @@ Examples:
 - human: where you going
 - human: where are you heading
 """
-from droidlet.dialog.ttad.generation_dialogues.template_objects import *
+from droidlet.perception.semantic_parsing_model.ttad.generation_dialogues.template_objects import *
 
 ANSWER_WITH_CORRECTION = [
     ## what is this + the thing at location ##

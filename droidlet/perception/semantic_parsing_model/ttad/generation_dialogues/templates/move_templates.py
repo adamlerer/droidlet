@@ -27,7 +27,7 @@ Examples:
 '''
 
 
-from droidlet.dialog.ttad.generation_dialogues.template_objects import *
+from droidlet.perception.semantic_parsing_model.ttad.generation_dialogues.template_objects import *
 
 MOVE_WITH_CORRECTION = [
     # TODO: add between for BlockObjectThese and BlockObjectThose these as well

@@ -22,7 +22,7 @@ Examples:
 '''
 
 
-from droidlet.dialog.ttad.generation_dialogues.template_objects import *
+from droidlet.perception.semantic_parsing_model.ttad.generation_dialogues.template_objects import *
 
 DESTROY_WITH_CORRECTION = [
     ## Destroy this / that X ##

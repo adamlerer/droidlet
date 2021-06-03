@@ -3,10 +3,7 @@ Copyright (c) Facebook, Inc. and its affiliates.
 
 This file contains common template objects used across different templates.
 """
-import random
 
-from droidlet.dialog.ttad.generation_dialogues.generate_utils import *
-from droidlet.dialog.ttad.generation_dialogues.tree_components import *
 from .template_object import *
 
 #######################

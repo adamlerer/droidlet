@@ -8,9 +8,6 @@ import math
 import pickle
 import torch
 from transformers import AutoModel, AutoTokenizer, BertConfig
-from droidlet.dialog.ttad.ttad_transformer_model.train_model import *
-
-from pprint import pprint
 
 model = "craftassist/agent/models/semantic_parser/ttad_bert_updated/caip_test_model.pth"
 args_path = "craftassist/agent/models/semantic_parser/ttad_bert_updated/caip_test_model_args.pk"

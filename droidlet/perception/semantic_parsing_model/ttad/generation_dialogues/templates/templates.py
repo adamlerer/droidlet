@@ -11,10 +11,7 @@ TemplateObject is defined in template_objects.py
 Each template captures how to phrase the intent. The intent is defined by the action
 type.
 """
-import copy
-import random
 
-from droidlet.dialog.ttad.generation_dialogues.template_objects import *
 from .build_templates import *
 from .move_templates import *
 from .dig_templates import *
