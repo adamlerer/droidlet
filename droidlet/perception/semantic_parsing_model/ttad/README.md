@@ -4,7 +4,7 @@
 
 Training code for semantic parsing models is in
 ```
-base_agent/ttad/ttad_transformer_model/train_model.py
+nsp_transformer_model/train_model.py
 ```
 
 Depending on your GPU driver version, you may need to downgrade your pytorch and CUDA versions. As of this writing, FAIR machines have installed NVIDIA driver version 10010, which is compatible with pytorch 1.5.1 and cudatoolkit 10.1. To update your conda env with these versions, run
@@ -19,13 +19,13 @@ https://pytorch.org/get-started/previous-versions/
 
 First, we need to pre-generate some templated data to train the model on. 500K examples should be a good start:
 ```
-$ cd ~/minecraft/base_agent/ttad/generation_dialogues
+$ cd nsp_templated_data_generation
 $ python generate_dialogue.py -n 500000 > generated_dialogues.txt
 ```
 
 This generates a text file. We next pre-process the data into the format required by the training script,
 ```
-$ cd ../ttad_transformer_model/
+$ cd ../nsp_transformer_model/
 $ python ~/droidlet/tools/nsp_scripts/data_processing_scripts/preprocess_templated.py \
 --raw_data_path ../generation_dialogues/generated_dialogues.txt \
 --output_path [OUTPUT_PATH (file must be named templated.txt)]
@@ -45,7 +45,7 @@ To create a split of annotated data too, simply run the above, but with filename
 We are now ready to train the model with:
 ```
 $ cd ~/droidlet
-$ python base_agent/ttad/ttad_transformer_model/train_model.py \
+$ python nsp_transformer_model/train_model.py \
 --data_dir craftassist/agent/models/ttad_bert_updated/annotated_data/ \
 --dtype_samples '[["templated", 0.35], ["templated_modify", 0.05], ["annotated", 0.6]]' \
 --tree_voc_file craftassist/agent/models/ttad_bert_updated/models/caip_test_model_tree.json \

@@ -9,7 +9,7 @@ from droidlet.perception.semantic_parsing_model.utils import preprocess
 from time import time
 from typing import Dict
 from .load_and_check_datasets import get_greetings, get_safety_words, get_ground_truth
-from .model.dialogue_model import DroidletSemanticParsingModel
+from droidlet.perception.semantic_parsing_model.nsp_model import DroidletSemanticParsingModel
 from droidlet.event import sio
 from .utils.nsp_logger import NSPLogger
 # TODO: move JSONValidator into base_util

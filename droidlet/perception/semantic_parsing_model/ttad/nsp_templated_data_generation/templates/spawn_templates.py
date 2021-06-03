@@ -22,7 +22,7 @@ Examples:
 '''
 
 
-from droidlet.perception.semantic_parsing_model.ttad.generation_dialogues.template_objects import *
+from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation.template_objects import *
 
 
 SPAWN_TEMPLATES = [

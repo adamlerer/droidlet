@@ -16,7 +16,7 @@ from .spatial_reasoning import ComputeLocations
 from .point_target import PointTargetInterpreter
 from droidlet.shared_data_structs import ErrorWithResponse
 from droidlet.interpreter.craftassist.tasks import Build, Point
-from droidlet.perception.semantic_parsing_model.ttad.generation_dialogues import prepend_a_an
+from droidlet.perception.semantic_parsing_model.ttad.nsp_templated_data_generation import prepend_a_an
 
 
 class MCGetMemoryHandler(GetMemoryHandler):
