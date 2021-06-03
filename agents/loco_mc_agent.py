@@ -283,10 +283,9 @@ class LocoMCAgent(BaseAgent):
                 self.perceive(force=True)
             # change this to memory.get_time() format?
             self.last_chat_time = time.time()
-            # Query perception.get_parse here, and pass it to dialogue_manager.step
-            chat_parse = self.chat_parser.get_parse(incoming_chats[0])
+            # For now just process the first incoming chat, where chat -> [speaker, chat]
+            chat_parse = self.chat_parser.get_parse(incoming_chats[0][1])
             # to here ###########################################
-            # for now just process the first incoming chat
             self.dialogue_manager.step(incoming_chats[0], chat_parse)
         else:
             # Maybe add default task
