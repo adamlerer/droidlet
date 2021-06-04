@@ -7,7 +7,8 @@ import numpy as np
 
 from .base_fakeagent_test_case import BaseFakeAgentTestCase
 import droidlet.lowlevel.locobot.rotation as rotation
-from droidlet.interpreter.tests.all_test_commands import MOVE_COMMANDS, GROUND_TRUTH_PARSES
+from droidlet.interpreter.tests.all_test_commands import MOVE_COMMANDS
+from droidlet.base_util import GROUND_TRUTH_PARSES
 from droidlet.lowlevel.locobot.tests.test_utils import assert_turn_degree
 
 CUBE1 = (9, 0, 4)

@@ -5,12 +5,12 @@ import os
 import unittest
 import logging
 
+from droidlet.base_util import GROUND_TRUTH_PARSES
 from droidlet.dialog.dialogue_manager import DialogueManager
 from droidlet.memory.dialogue_stack import DialogueStack
 from droidlet.dialog.parse_to_dialogue_object import DialogueObjectMapper
 from droidlet.perception.semantic_parsing.droidlet_nsp_model_wrapper import DroidletNSPModelWrapper
 from agents.loco_mc_agent import LocoMCAgent
-from droidlet.interpreter.tests.all_test_commands import *
 from droidlet.shared_data_structs import MockOpt
 
 

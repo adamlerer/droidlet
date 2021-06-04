@@ -4,43 +4,10 @@ Copyright (c) Facebook, Inc. and its affiliates.
 import os
 import unittest
 import json
-
-from droidlet.perception.semantic_parsing.droidlet_nsp_model_wrapper import DroidletNSPModelWrapper
-from droidlet.memory.dialogue_stack import DialogueStack
-from droidlet.dialog.parse_to_dialogue_object import DialogueObjectMapper
-from agents.loco_mc_agent import LocoMCAgent
+from ..droidlet_nsp_model_wrapper import DroidletNSPModelWrapper
+from droidlet.base_util import GROUND_TRUTH_PARSES
 from droidlet.shared_data_structs import MockOpt
 from prettytable import PrettyTable
-
-
-class AttributeDict(dict):
-    __getattr__ = dict.__getitem__
-    __setattr__ = dict.__setitem__
-
-
-class FakeMemory:
-    pass
-
-
-class FakeAgent(LocoMCAgent):
-    def __init__(self, opts):
-        super(FakeAgent, self).__init__(opts)
-        self.opts = opts
-
-    def init_memory(self):
-        m = FakeMemory()
-        stack = DialogueStack()
-        m.dialogue_stack = stack
-        self.memory = m
-
-    def init_physical_interfaces(self):
-        pass
-
-    def init_perception(self):
-        self.chat_parser = DroidletNSPModelWrapper(self.opts)
-
-    def init_controller(self):
-        pass
 
 
 class fontcolors:
@@ -829,6 +796,7 @@ common_functional_commands = {
         },
     },
 }
+common_functional_commands.update(GROUND_TRUTH_PARSES)
 
 TTAD_MODEL_DIR = os.path.join(
     os.path.dirname(__file__), "../../../../agents/craftassist/models/semantic_parser/"
@@ -904,14 +872,13 @@ def compare_full_dictionaries(d1, d2):
 
 
 class TestDialogueManager(unittest.TestCase):
-    def __init__(self, *args, **kwargs):
-        super(TestDialogueManager, self).__init__(*args, **kwargs)
+    def setUp(self) :
         opts = MockOpt()
         opts.nsp_data_dir = TTAD_BERT_DATA_DIR
         opts.ground_truth_data_dir = GROUND_TRUTH_DATA_DIR
         opts.nsp_models_dir = TTAD_MODEL_DIR
         opts.no_ground_truth = False
-        self.agent = FakeAgent(opts)
+        self.chat_parser = DroidletNSPModelWrapper(opts)
         self.ground_truth_actions = {}
         print("fetching data from ground truth, from directory: %r" % (opts.ground_truth_data_dir))
         if not opts.no_ground_truth:
@@ -922,6 +889,7 @@ class TestDialogueManager(unittest.TestCase):
                         text, logical_form = line.strip().split("|")
                         clean_text = text.strip('"').lower()
                         self.ground_truth_actions[clean_text] = json.loads(logical_form)
+        self.ground_truth_actions.update(GROUND_TRUTH_PARSES)
 
     def test_parses(self):
         table = PrettyTable(["Command", "Overall parsing status", "Parsing model status"])
@@ -935,7 +903,7 @@ class TestDialogueManager(unittest.TestCase):
             else:
                 # else query the model and remove the value for key "text_span"
                 model_prediction = remove_text_span(
-                    self.agent.chat_parser.parsing_model.query_for_logical_form(chat=command)
+                    self.chat_parser.parsing_model.query_for_logical_form(chat=command)
                 )
 
             # compute parsing pipeline accuracy
@@ -954,7 +922,7 @@ class TestDialogueManager(unittest.TestCase):
                 ]
             # compute model correctness status
             model_output = remove_text_span(
-                self.agent.chat_parser.parsing_model.query_for_logical_form(chat=command)
+                self.chat_parser.parsing_model.query_for_logical_form(chat=command)
             )
             parsing_model_status = compare_full_dictionaries(ground_truth_parse, model_output)
             if parsing_model_status:
