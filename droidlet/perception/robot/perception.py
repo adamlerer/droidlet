@@ -60,9 +60,9 @@ class SlowPerception:
         """
         detections = self.vision.detector(rgb_depth)
         humans = self.vision.human_pose(rgb_depth)
-        face_detections = self.vision.face_recognizer(rgb_depth)
-        if face_detections:
-            detections += face_detections
+        # face_detections = self.vision.face_recognizer(rgb_depth)
+        # if face_detections:
+            # detections += face_detections
         # laser_detection_obj = self.vision.laser_pointer(rgb_depth)
         # if laser_detection_obj:
         #     detections += [laser_detection_obj]
@@ -246,5 +246,5 @@ class Perception:
         payload["x"] = x
         payload["y"] = y
         payload["yaw"] = yaw
-        payload["map"] = self.agent.mover.get_obstacles_in_canonical_coords()
+        # payload["map"] = self.agent.mover.get_obstacles_in_canonical_coords()
         sio.emit("sensor_payload", payload)
