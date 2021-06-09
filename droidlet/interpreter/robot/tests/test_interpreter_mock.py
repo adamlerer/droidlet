@@ -6,7 +6,7 @@ import unittest
 import numpy as np
 
 from .base_fakeagent_test_case import BaseFakeAgentTestCase
-import droidlet.lowlevel.locobot.rotation as rotation
+import droidlet.lowlevel.rotation as rotation
 from droidlet.interpreter.tests.all_test_commands import MOVE_COMMANDS, GROUND_TRUTH_PARSES
 from droidlet.lowlevel.locobot.tests.test_utils import assert_turn_degree
 
